@@ -1,0 +1,39 @@
+public class Car {
+	
+	private Engine engine;
+
+	/**
+	 * @param engine
+	 */
+	public Car(Engine engine) {
+		this.engine = engine;
+	}
+
+	@Override
+	public String toString() {
+		return "A car with a " + this.engine.getFuel() + " engine.";
+	}
+}public class Engine {
+	private FuelType fuel;
+
+	/**
+	 * @param fuel
+	 */
+	public Engine(FuelType fuel) {
+		super();
+		this.fuel = fuel;
+	}
+
+	/**
+	 * @return the fuel
+	 */
+	public FuelType getFuel() {
+		return fuel;
+	}
+}public class Main {
+
+	public static void main(String[] args) {
+		Car car = new Car(new Engine(FuelType.Diesel));
+		System.out.println(car);
+	}
+}
